@@ -1,0 +1,52 @@
+@startuml
+
+title Don't be a fool 
+
+
+@startuml
+
+(*) --> "are you smart?"
+
+if ""
+  -->[no] "shame on you"
+  --> (*)
+else
+    --> [yes] "full coffee pot in coffee maker?"
+    if ""
+        --> [no] "place empty coffee pot in coffee maker"
+    else
+        -->[yes] "remove full coffee pot"
+        --> "place empty coffee pot in coffee maker"
+    endif
+    
+    --> ===B1===
+    
+    ===B1=== --> "fill measuring vessel with water"
+    note right
+        up to the blue line
+    end note
+    --> fill water from measuring vessel in coffee maker
+    --> [water control lamp lights up] ===B2===
+    
+    ===B1=== --> "remove brew basket"
+
+    if ""
+        --> [brew basket full] "empty the brew basket"
+        --> "get a basket coffee filter"
+    else 
+        --> [brew basket empty] "get a basket coffee filter"
+
+    endif
+
+    --> "insert coffee filter in brew basket"
+    --> "fill filter with ground coffee"
+            note left
+            one filter - one pack
+        end note
+    --> "place brew basket in coffee maker"
+    --> ===B2===
+    --> "switch on coffee maker"
+    --> [second control lamp lights up](*)
+endif
+
+@enduml
